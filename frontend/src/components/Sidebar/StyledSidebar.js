@@ -1,0 +1,29 @@
+import styled from 'styled-components'
+
+const StyledSidebar = styled.nav`
+  position: fixed;
+  width: 35%;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100vh;
+  padding: 1rem 1.5rem;
+  background-image: url('https://source.unsplash.com/BfriYg0iOCs/1200x900');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  z-index: 2;
+  a {
+    font-size: 1.6rem;
+  }
+  button {
+    font-size: 1.6rem;
+    color: white;
+    :first-child {
+      margin-right: 1rem;
+    }
+  }
+`
+
+export default StyledSidebar
