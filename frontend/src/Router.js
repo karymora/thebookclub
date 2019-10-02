@@ -4,6 +4,7 @@ import Profile from './components/Profile'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Home from './components/home/Home'
+import UsersAll from './components/users/UsersAll'
 import ReadingGroup from './components/ReadingGroup'
 import Place from './components/Place'
 import Meeting from './components/Meeting'
@@ -18,6 +19,7 @@ const Router = () => (
       <Route exact path="/group" component={ReadingGroup} />
       <Route exact path="/place" component={Place} />
       <Route exact path="/meeting" component={Meeting} />
+      <Route exact path="/all-users" component={UsersAll} />
     </Switch>
   </BrowserRouter>
 )

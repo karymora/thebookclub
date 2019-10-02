@@ -28,8 +28,8 @@ const userSchema = new Schema(
       ]
     },
     description: String,
-    contacts: {},
-    booksRead: {}
+    contacts: [],
+    booksRead: []
   },
 
   {

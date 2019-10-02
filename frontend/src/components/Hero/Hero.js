@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import StyledHero from './StyledHero'
 import Button from '../Button/Button'
 import { Link } from 'react-router-dom'

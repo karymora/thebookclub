@@ -3,7 +3,7 @@ import AUTH_SERVICE from '../services/index'
 import Button from '../components/Button/Button'
 // import axios from 'axios'
 import { MyContext } from '../context'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class Signup extends Component {
   state = {
@@ -19,6 +19,9 @@ class Signup extends Component {
       booksRead: ''
     }
   }
+
+
+
 
   handleInput = e => {
     const { user } = this.state

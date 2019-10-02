@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from '../Hero/Hero'
 import Navbar from '../Navbar/Navbar'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 function Home() {
   return (

@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { MyContext } from '../context'
-import Button from '../components/Button/Button'
-import { Link } from 'react-router-dom'
+// import Button from '../components/Button/Button'
+// import { Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar/Sidebar'
-import Description from './Description/Description'
 
 class Profile extends Component {
   state = {
@@ -12,7 +11,7 @@ class Profile extends Component {
       email: '',
       genres: '',
       description: '',
-      contacts: {}
+      contacts: []
     }
   }
 
@@ -48,10 +47,10 @@ class Profile extends Component {
               <p className="title is-2 is-spaced">Email</p>
               <p className="subtitle is-4">{user.user.email}</p>
             </div>
-            <div className="profile-info-2">
+            {/* <div className="profile-info-2">
               <p className="title is-2 is-spaced">Description</p>
               <p className="subtitle is-4">{user.user.description}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
