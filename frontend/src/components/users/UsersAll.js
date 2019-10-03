@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Card, Icon } from 'antd'
+import { Card, Icon } from 'antd'
 import axios from 'axios'
 // const User = require('../models/User')
 
@@ -20,23 +20,23 @@ export default class UsersAll extends Component {
       })
   }
 
-  // deleteUser = id => {
-  //   axios
-  //     .delete(`http://localhost:3000/users/allusers/${id}`)
-  //     .then(({ data }) => {
-  //       this.setState(prevState => {
-  //         return {
-  //           ...prevState,
-  //           users: prevState.users.filter(e => e._id !== data.user._id)
-  //         }
-  //       })
-  //     })
-  //     .catch(err => console.log(err))
-  // }
+  deleteUser = id => {
+    axios
+      .delete(`http://localhost:3000/users/allusers/${id}`)
+      .then(response => {
+        this.setState(prevState => {
+          return {
+            ...prevState,
+            users: prevState.users.filter(e => e._id !== response.data.user._id)
+          }
+        })
+      })
+      .catch(err => console.log(err))
+  }
 
-  // editUser = id => {
-  //   this.props.history.push(`/allusers/edit/${id}`)
-  // }
+  editUser = id => {
+    this.props.history.push(`/allusers/edit/${id}`)
+  }
 
   render() {
     let { users } = this.state
@@ -54,9 +54,28 @@ export default class UsersAll extends Component {
         }}
       >
         {users.map((user, i) => (
-          <div className="col-md-4 offset-md-4" key={i}>
-            <div className="container">{user.email}</div>
-          </div>
+          // <div className="user-container col-md-4 offset-md-4" key={i}>
+          //   <div className="container">{user.email}</div>
+          // </div>
+
+          <Card
+            title={user.username}
+            key={user._id}
+            style={{ width: '25%' }}
+            cover={<img src={user.image} alt={user.username} height="500px" />}
+            actions={[
+              <Icon
+                type="delete"
+                key="delete"
+                onClick={() => this.deleteUser(user._id)}
+              />,
+              <Icon
+                type="edit"
+                key="edit"
+                onClick={() => this.editUser(user._id)}
+              />
+            ]}
+          ></Card>
         ))}
       </div>
     )

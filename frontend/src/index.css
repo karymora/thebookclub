@@ -69,3 +69,9 @@ button {
     }
   }
 }
+
+.user-container {
+  height: 350px;
+  background-color: pink;
+  margin-bottom: 40px;
+}

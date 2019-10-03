@@ -20,9 +20,6 @@ class Signup extends Component {
     }
   }
 
-
-
-
   handleInput = e => {
     const { user } = this.state
     const key = e.target.name
