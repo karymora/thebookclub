@@ -2,33 +2,34 @@ const { Schema, model } = require('mongoose')
 
 const meetingSchema = new Schema(
   {
+    meetingName: String,
     assistants: [],
 
-    date: {
+    meetingDate: {
       type: Date
     },
 
-    location: {
-      type: {
-        type: String,
-        default: 'Point'
-      },
-      address: {
-        type: String
-      },
-      coordinates: {
-        type: [Number]
-      }
-    },
+    // location: {
+    //   type: {
+    //     type: String,
+    //     default: 'Point'
+    //   },
+    //   address: {
+    //     type: String
+    //   },
+    //   coordinates: {
+    //     type: [Number]
+    //   }
+    // },
 
-    description: {
+    meetingDescription: {
       type: String
     },
     img: {
-      type: String,
-      default:
-        'https://i.ibb.co/gWjqGf2/adolescent-connection-discussion-1595391.jpg'
-      //required: true
+      type: String
+      // default:
+      //   'https://i.ibb.co/gWjqGf2/adolescent-connection-discussion-1595391.jpg'
+      // //required: true
     }
   },
   {
@@ -37,8 +38,8 @@ const meetingSchema = new Schema(
   }
 )
 
-meetingSchema.index({
-  location: '2dsphere'
-})
+// meetingSchema.index({
+//   location: '2dsphere'
+// })
 
 module.exports = model('Meeting', meetingSchema)

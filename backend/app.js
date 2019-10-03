@@ -12,9 +12,7 @@ const passport = require('./config/passport')
 
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(x =>
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  )
+  .then(x => console.log(`Connected to Mongo! Database name: "thebookclub"`))
   .catch(err => console.error('Error connecting to mongo', err))
 
 const app_name = require('./package.json').name
@@ -53,10 +51,12 @@ const index = require('./routes/index')
 const auth = require('./routes/auth')
 const users = require('./routes/users')
 const books = require('./routes/books')
+const meetings = require('./routes/meetings')
 app.use('/', index)
 app.use('/auth', auth)
 app.use('/users', users)
 app.use('/books', books)
+app.use('/meetings', meetings)
 
 // Uncomment this line for production
 // app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));
