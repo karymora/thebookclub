@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Icon } from 'antd'
 import axios from 'axios'
-// const User = require('../models/User')
 
 export default class BooksAll extends Component {
   state = {
@@ -12,7 +11,7 @@ export default class BooksAll extends Component {
     axios
       .get('http://localhost:3000/books/allbooks')
       .then(response => {
-        this.setState({ users: response.data.books })
+        this.setState({ books: response.data.book })
         console.log(this.state.books)
       })
       .catch(error => {
@@ -67,12 +66,12 @@ export default class BooksAll extends Component {
               <Icon
                 type="delete"
                 key="delete"
-                onClick={() => this.deleteUser(book._id)}
+                onClick={() => this.deleteBook(book._id)}
               />,
               <Icon
                 type="edit"
                 key="edit"
-                onClick={() => this.editUser(book._id)}
+                onClick={() => this.editBook(book._id)}
               />
             ]}
           ></Card>
