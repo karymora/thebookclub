@@ -9,6 +9,7 @@ const bookSchema = new Schema(
     },
 
     bookGenre: {
+      type: String,
       enum: [
         'scifi',
         'fantasy',
@@ -20,6 +21,7 @@ const bookSchema = new Schema(
         'dystopia'
       ]
     },
+    imageBook: String,
     description: String,
     reviews: {},
     stars: Number

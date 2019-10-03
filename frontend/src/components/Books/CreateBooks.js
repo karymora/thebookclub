@@ -10,23 +10,12 @@ export default class CreateBooks extends Component {
       author: '',
       date: '',
       bookGenre: '',
-      description: ''
+      description: '',
+      image: ''
       // reviews: '',
       // stars: ''
     },
     response: undefined
-  }
-
-  addBook = e => {
-    e.preventDefault()
-    AUTH_SERVICE.addbook(this.state.book)
-      .then(response => {
-        let bookMsg = response.data.msg
-        console.log(bookMsg)
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 
   handleInput = e => {
@@ -36,6 +25,17 @@ export default class CreateBooks extends Component {
         [e.target.name]: e.target.value
       }
     })
+  }
+
+  addBook = e => {
+    e.preventDefault()
+    AUTH_SERVICE.addbook(this.state.book)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log('de aquí no')
+      })
   }
 
   render() {
@@ -105,6 +105,25 @@ export default class CreateBooks extends Component {
                     onChange={this.handleInput}
                     name="author"
                     value={book.author}
+                  />
+                </div>
+
+                {/* Image*/}
+                <div className="form-group">
+                  <label for="formGroupExampleInput">Image</label>
+                  <input
+                    style={{
+                      height: '40px',
+                      backgroundColor: '#EEEEEE',
+                      border: 'none',
+                      borderStyle: 'none'
+                    }}
+                    className="form-control"
+                    onChange={this.handleInput}
+                    type="text"
+                    name="imageBook"
+                    placeholder="Image URL"
+                    value={book.imageBook}
                   />
                 </div>
 

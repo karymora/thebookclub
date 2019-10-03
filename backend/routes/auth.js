@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
+const Book = require('../models/Book')
 const passport = require('../config/passport')
 
 router.post('/signup', (req, res, next) => {
@@ -19,6 +20,11 @@ router.post('/login', passport.authenticate('local'), (req, res, next) => {
 //     res.status(200).json(user)
 //   })
 // })
+router.post('/addbook', (req, res, next) => {
+  let book = Book.create(req.body)
+    .then(book => res.status(201).json({ book }))
+    .catch(err => res.status(401).json({ err }))
+})
 
 router.get('/logout', (req, res, next) => {
   req.logout()

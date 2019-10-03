@@ -10,6 +10,7 @@ import Place from './components/Place'
 import Meeting from './components/Meeting'
 import UserDetail from './components/users/UserDetail'
 import CreateBooks from './components/Books/CreateBooks'
+import BooksAll from './components/Books/BooksAll'
 // import EditUser from './components/users/EditUser'
 
 const Router = () => (
@@ -23,6 +24,7 @@ const Router = () => (
       <Route exact path="/place" component={Place} />
       <Route exact path="/meeting" component={Meeting} />
       <Route exact path="/all-users" component={UsersAll} />
+      <Route exact path="/all-books" component={BooksAll} />
       <Route exact path="/all-users/:id" component={UserDetail} />
       <Route exact path="/addbook" component={CreateBooks} />
       {/* <Route exact path="/all-users/edit/:id" component={EditUser} /> */}
