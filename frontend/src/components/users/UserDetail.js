@@ -20,7 +20,18 @@ export default class UserDetail extends Component {
   render() {
     let { user } = this.state
 
-    return <div>{user && <p>{user.username}</p>}</div>
+    return (
+      <div className="col-md-8 offset-md-2">
+        <div className="container"></div>
+
+        <div className="container">
+          <div>{user && <p>{user.username}</p>}</div>
+          <div>{user && <p>{user.email}</p>}</div>
+          <div>{user && <p>{user.genres}</p>}</div>
+          <div>{user && <p>{user.description}</p>}</div>
+        </div>
+      </div>
+    )
   }
 }
 

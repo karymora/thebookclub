@@ -14,11 +14,12 @@ const AUTH_SERVICE = {
     return await SERVICE.get('/logout')
   },
   edit: async updateUser => {
-    return await SERVICE.post('/edit', updateUser)
+    return await SERVICE.put('/edit', updateUser)
   },
   addbook: async book => {
     return await SERVICE.post('/addbook', book)
   },
+
   addmeeting: async meeting => {
     return await SERVICE.post('/addmeeting', meeting)
   }

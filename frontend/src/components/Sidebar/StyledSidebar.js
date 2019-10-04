@@ -27,3 +27,8 @@ const StyledSidebar = styled.nav`
 `
 
 export default StyledSidebar
+
+// background - image: ${
+//   props =>
+//   props.url ? props.url : 'https://source.unsplash.com/BfriYg0iOCs/1200x900'
+// };

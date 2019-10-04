@@ -3,6 +3,8 @@ import { MyContext } from '../context'
 // import Button from '../components/Button/Button'
 // import { Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar/Sidebar'
+import { Link } from 'react-router-dom'
+import { Button } from 'antd'
 
 class Profile extends Component {
   state = {
@@ -52,6 +54,9 @@ class Profile extends Component {
               <p className="subtitle is-4">{user.user.description}</p>
             </div> */}
           </div>
+          {/* <Link to={`/users/allusers/${id}`}>
+            <Button>Edit Profile</Button>
+          </Link> */}
         </div>
       </div>
     )

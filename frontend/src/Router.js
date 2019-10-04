@@ -12,6 +12,7 @@ import UserDetail from './components/users/UserDetail'
 import CreateBooks from './components/Books/CreateBooks'
 import BooksAll from './components/Books/BooksAll'
 import CreateMeetings from './components/Meetings/CreateMeetings'
+import EditUser from './components/users/EditUser'
 // import EditUser from './components/users/EditUser'
 
 const Router = () => (
@@ -26,10 +27,10 @@ const Router = () => (
       <Route exact path="/meeting" component={Meeting} />
       <Route exact path="/all-users" component={UsersAll} />
       <Route exact path="/all-books" component={BooksAll} />
-      <Route exact path="/all-users/:id" component={UserDetail} />
       <Route exact path="/addbook" component={CreateBooks} />
       <Route exact path="/addmeeting" component={CreateMeetings} />
-      {/* <Route exact path="/all-users/edit/:id" component={EditUser} /> */}
+      <Route exact path="/allusers/users/:id" component={UserDetail} />
+      <Route exact path="/allusers/edit/:id" component={EditUser} /> */}
     </Switch>
   </BrowserRouter>
 )

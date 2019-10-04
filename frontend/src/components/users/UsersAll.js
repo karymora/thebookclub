@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Card, Icon } from 'antd'
+import { Card, Icon, Form } from 'antd'
 import axios from 'axios'
+
 // const User = require('../models/User')
 
 export default class UsersAll extends Component {
@@ -60,9 +61,19 @@ export default class UsersAll extends Component {
 
           <Card
             title={user.username}
+            actions
             key={user._id}
             style={{ width: '25%' }}
-            cover={<img src={user.image} alt={user.username} height="500px" />}
+            cover={
+              <img
+                src={user.image}
+                alt={user.username}
+                height="500px"
+                onClick={() =>
+                  this.props.history.push(`/allusers/users/${user._id}`)
+                }
+              />
+            }
             actions={[
               <Icon
                 type="delete"

@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose')
 const PLM = require('passport-local-mongoose')
+// const mongoose = require('mongoose');
 
 const userSchema = new Schema(
   {
@@ -10,6 +11,7 @@ const userSchema = new Schema(
       type: String,
       enum: ['admin', 'user']
     },
+
     placePreference: {
       type: String,
       enum: ['café', 'bar']
@@ -27,9 +29,25 @@ const userSchema = new Schema(
         'dystopia'
       ]
     },
-    description: String,
-    contacts: [],
-    booksRead: []
+    description: String
+    // sentRequest: [
+    //   {
+    //     username: { type: String, default: '' }
+    //   }
+    // ],
+    // request: [
+    //   {
+    //     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    //     username: { type: String, default: '' }
+    //   }
+    // ],
+    // friendsList: [
+    //   {
+    //     friendId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    //     friendName: { type: String, default: '' }
+    //   }
+    // ],
+    // totalRequest: { type: Number, default: 0 }
   },
 
   {
