@@ -7,7 +7,12 @@ const bookSchema = new Schema(
     date: {
       type: Date
     },
-
+    owners: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
     bookGenre: {
       type: String,
       enum: [

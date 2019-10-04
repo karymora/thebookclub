@@ -1,6 +1,8 @@
 const express = require('express')
-const router = express.Router()
 const Meeting = require('../models/Meeting')
+const passport = require('../config/passport')
+const User = require('../models/User')
+const router = express.Router()
 
 router.get('/allmeetings', (req, res, next) => {
   Meeting.find()
@@ -9,6 +11,31 @@ router.get('/allmeetings', (req, res, next) => {
 })
 
 router.get('/allmeetings/:id', (req, res, next) => {
+  Meeting.findById(req.params.id)
+    .then(meeting => res.status(200).json({ meeting }))
+    .catch(error => res.status(500).json({ error }))
+})
+
+// router.post('/:id/meetingregister', async (req, res, next) => {
+//   const { id } = req.params
+//   const { userName, picPath, email, role } = await User.findById(req.user.id)
+//   const allUser = await User.findById(req.user.id)
+//   const meeting = await Meeting.findByIdAndUpdate(id, {
+//     $push: { assistants: allUser }
+//   })
+
+router.post('/:id/meetingregister', async (req, res, next) => {
+  const theMeeting = await Meeting.findById(req.params.id)
+  const theUser = await User.findById(req.body.id)
+  console.log(theUser)
+  const meetAssistants = theMeeting.assistants
+  console.log('>>>>>>' + theMeeting)
+  console.log('++++' + theMeeting.assistants)
+  theMeeting.assistants.push(req.body.id)
+  await theMeeting.save()
+})
+
+router.get('/:id/meetingregister', (req, res, next) => {
   Meeting.findById(req.params.id)
     .then(meeting => res.status(200).json({ meeting }))
     .catch(error => res.status(500).json({ error }))

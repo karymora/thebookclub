@@ -5,6 +5,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Home from './components/home/Home'
 import UsersAll from './components/users/UsersAll'
+import AllMeetings from './components/Meetings/AllMeetings'
 import ReadingGroup from './components/ReadingGroup'
 import Place from './components/Place'
 import Meeting from './components/Meeting'
@@ -13,6 +14,7 @@ import CreateBooks from './components/Books/CreateBooks'
 import BooksAll from './components/Books/BooksAll'
 import CreateMeetings from './components/Meetings/CreateMeetings'
 import EditUser from './components/users/EditUser'
+
 // import EditUser from './components/users/EditUser'
 
 const Router = () => (
@@ -29,8 +31,9 @@ const Router = () => (
       <Route exact path="/all-books" component={BooksAll} />
       <Route exact path="/addbook" component={CreateBooks} />
       <Route exact path="/addmeeting" component={CreateMeetings} />
+      <Route exact path="/allmeetings" component={AllMeetings} />
       <Route exact path="/allusers/users/:id" component={UserDetail} />
-      <Route exact path="/allusers/edit/:id" component={EditUser} /> */}
+      <Route exact path="/allusers/edit/:id" component={EditUser} />
     </Switch>
   </BrowserRouter>
 )

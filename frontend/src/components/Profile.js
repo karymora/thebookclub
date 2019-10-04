@@ -4,7 +4,7 @@ import { MyContext } from '../context'
 // import { Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar/Sidebar'
 import { Link } from 'react-router-dom'
-import { Button } from 'antd'
+import Button from '../components/Button/Button'
 
 class Profile extends Component {
   state = {
@@ -31,6 +31,7 @@ class Profile extends Component {
 
   render() {
     const user = this.state
+    const { id } = this.props.match.params
     return (
       <div>
         <Sidebar />
@@ -49,14 +50,10 @@ class Profile extends Component {
               <p className="title is-2 is-spaced">Email</p>
               <p className="subtitle is-4">{user.user.email}</p>
             </div>
-            {/* <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Description</p>
-              <p className="subtitle is-4">{user.user.description}</p>
-            </div> */}
+            <Link to={`/allusers/edit/${id}`}>
+              <Button bg="black">Edit Profile</Button>
+            </Link>
           </div>
-          {/* <Link to={`/users/allusers/${id}`}>
-            <Button>Edit Profile</Button>
-          </Link> */}
         </div>
       </div>
     )

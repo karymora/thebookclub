@@ -153,5 +153,3 @@ export default class CreateMeetings extends Component {
     )
   }
 }
-
-CreateMeetings.contextType = MyContext

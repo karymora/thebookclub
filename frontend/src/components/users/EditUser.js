@@ -57,7 +57,7 @@ class EditUser extends Component {
             //   booksRead: ''
           }
         })
-        this.props.history.push('/user')
+        this.props.history.push('/profile')
       })
       .catch(error => {
         console.log(error)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Icon } from 'antd'
 import axios from 'axios'
+import Button from '../../components/Button/Button'
 
 export default class BooksAll extends Component {
   state = {
@@ -74,7 +75,11 @@ export default class BooksAll extends Component {
                 onClick={() => this.editBook(book._id)}
               />
             ]}
-          ></Card>
+          >
+            <Button bg="black" onClick={() => this.editBook(book._id)}>
+              Add to my Books
+            </Button>
+          </Card>
         ))}
       </div>
     )

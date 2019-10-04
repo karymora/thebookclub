@@ -22,14 +22,16 @@ export default class UserDetail extends Component {
 
     return (
       <div className="col-md-8 offset-md-2">
-        <div className="container"></div>
-
-        <div className="container">
+        <div className="col-md-4">
+          aquí va la foto
+        </div>
+        <div className="col-md-4">
           <div>{user && <p>{user.username}</p>}</div>
           <div>{user && <p>{user.email}</p>}</div>
           <div>{user && <p>{user.genres}</p>}</div>
           <div>{user && <p>{user.description}</p>}</div>
-        </div>
+        
+      </div>
       </div>
     )
   }

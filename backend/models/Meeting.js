@@ -3,11 +3,22 @@ const { Schema, model } = require('mongoose')
 const meetingSchema = new Schema(
   {
     meetingName: String,
-    assistants: [],
+    assistants: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
+    meetingDate: Date,
 
-    meetingDate: {
-      type: Date
-    },
+    // user: {
+    //   ref: 'User',
+    //   type: Schema.Types.ObjectId
+    // },
+    // owner: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'User'
+    // },
 
     // location: {
     //   type: {

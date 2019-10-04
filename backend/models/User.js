@@ -29,7 +29,20 @@ const userSchema = new Schema(
         'dystopia'
       ]
     },
-    description: String
+    books: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Book'
+      }
+    ],
+
+    description: String,
+
+    meeting: {
+      type: Schema.Types.ObjectId,
+      ref: 'Meeting'
+    }
+
     // sentRequest: [
     //   {
     //     username: { type: String, default: '' }
