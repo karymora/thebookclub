@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Icon, Form } from 'antd'
 import axios from 'axios'
+import Button from '../Button/StyledButton'
+import MyProvider from '../../context/index'
 
 // const User = require('../models/User')
 
@@ -39,6 +41,16 @@ export default class AllMeetings extends Component {
 
   editMeeting = id => {
     this.props.history.push(`/allmeetings/edit/${id}`)
+  }
+
+  joinMeeting = async meetingId => {
+    const userId = { id: '5d958c4e17305210f6ce4088' }
+    console.log('>>>>' + MyProvider.state)
+    const { data } = await axios.post(
+      `http://localhost:3000/meetings/${meetingId}/meetingregister`,
+      userId
+    )
+    console.log(data)
   }
 
   render() {
@@ -90,7 +102,13 @@ export default class AllMeetings extends Component {
                 onClick={() => this.editMeeting(meeting._id)}
               />
             ]}
-          ></Card>
+          >
+            <div>{meeting.assistants}</div>
+
+            <Button bg="black" onClick={() => this.joinMeeting(meeting._id)}>
+              Click me
+            </Button>
+          </Card>
         ))}
       </div>
     )

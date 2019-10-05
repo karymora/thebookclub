@@ -75,3 +75,15 @@ button {
   background-color: pink;
   margin-bottom: 40px;
 }
+
+.profile-container {
+  display: flex;
+}
+
+.profile-bar {
+  display: inline-block;
+}
+
+.profile-content {
+  display: inline-block;
+}

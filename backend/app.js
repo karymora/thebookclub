@@ -5,9 +5,11 @@ const cookieParser = require('cookie-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const logger = require('morgan')
+const hbs = require('hbs')
 const path = require('path')
 const cors = require('cors')
 const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
 const passport = require('./config/passport')
 
 mongoose
@@ -31,13 +33,17 @@ app.use(
 
 app.use(
   session({
-    resave: false,
-    saveUninitialized: true,
     secret: process.env.SECRET,
-    cookie: { maxAge: 1000 * 60 * 60 }
+    resave: true,
+    cookie: {
+      maxAge: 6000000000
+    },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 6000 * 6000 // 1 day
+    })
   })
 )
-
 app.use(passport.initialize())
 app.use(passport.session())
 

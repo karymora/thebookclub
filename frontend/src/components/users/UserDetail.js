@@ -21,17 +21,14 @@ export default class UserDetail extends Component {
     let { user } = this.state
 
     return (
-      <div className="col-md-8 offset-md-2">
-        <div className="col-md-4">
-          aquí va la foto
-        </div>
-        <div className="col-md-4">
+      <div className="profile-container col-md-8 offset-md-2">
+        <div className="profile-bar  col-md-4"></div>
+        <div className="profile-contentcol-md-4">
           <div>{user && <p>{user.username}</p>}</div>
           <div>{user && <p>{user.email}</p>}</div>
           <div>{user && <p>{user.genres}</p>}</div>
           <div>{user && <p>{user.description}</p>}</div>
-        
-      </div>
+        </div>
       </div>
     )
   }

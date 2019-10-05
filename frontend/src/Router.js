@@ -17,7 +17,12 @@ import EditUser from './components/users/EditUser'
 
 // import EditUser from './components/users/EditUser'
 
-const Router = () => (
+// const token = localStorage.getItem('token')
+// if (token) {
+//   store.dispatch({ type: AUTHENTICATE_THE_USER })
+// }
+
+const Router = user => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />

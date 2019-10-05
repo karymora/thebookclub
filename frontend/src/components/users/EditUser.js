@@ -88,6 +88,7 @@ class EditUser extends Component {
 
   render() {
     const { user } = this.state
+    console.log(user.id)
     console.log(this.props)
     return (
       <div

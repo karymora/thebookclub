@@ -22,6 +22,10 @@ const AUTH_SERVICE = {
 
   addmeeting: async meeting => {
     return await SERVICE.post('/addmeeting', meeting)
+  },
+
+  joinMeeting: async meeting => {
+    return await SERVICE.post('/joinmeeting', meeting)
   }
 }
 

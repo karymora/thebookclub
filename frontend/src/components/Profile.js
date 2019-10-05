@@ -18,7 +18,8 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    if (!this.context.state.loggedUser) return this.props.history.push('/login')
+    if (!this.context.state.loggedUser)
+      return this.props.history.push('/login', { new: true })
     const userinfo = this.context.state.loggedUser
     this.setState(userinfo)
     console.log(userinfo)
@@ -32,6 +33,7 @@ class Profile extends Component {
   render() {
     const user = this.state
     const { id } = this.props.match.params
+    console.log('>>>>>' + user.user._id)
     return (
       <div>
         <Sidebar />
@@ -50,7 +52,7 @@ class Profile extends Component {
               <p className="title is-2 is-spaced">Email</p>
               <p className="subtitle is-4">{user.user.email}</p>
             </div>
-            <Link to={`/allusers/edit/${id}`}>
+            <Link to={`/allusers/edit/${user.user._id}`}>
               <Button bg="black">Edit Profile</Button>
             </Link>
           </div>
