@@ -16,23 +16,11 @@ router.get('/allmeetings/:id', (req, res, next) => {
     .catch(error => res.status(500).json({ error }))
 })
 
-// router.post('/:id/meetingregister', async (req, res, next) => {
-//   const { id } = req.params
-//   const { userName, picPath, email, role } = await User.findById(req.user.id)
-//   const allUser = await User.findById(req.user.id)
-//   const meeting = await Meeting.findByIdAndUpdate(id, {
-//     $push: { assistants: allUser }
-//   })
-
 router.post('/:id/meetingregister', async (req, res, next) => {
   const theMeeting = await Meeting.findById(req.params.id)
-  const theUser = await User.findById(req.body.id)
-  console.log(theUser)
-  const meetAssistants = theMeeting.assistants
-  console.log('>>>>>>' + theMeeting)
-  console.log('++++' + theMeeting.assistants)
   theMeeting.assistants.push(req.body.id)
   await theMeeting.save()
+  res.status(201).json({ msg: 'Todo chido' })
 })
 
 router.get('/:id/meetingregister', (req, res, next) => {
