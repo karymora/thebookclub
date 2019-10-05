@@ -8,7 +8,7 @@ const StyledSidebar = styled.nav`
   display: flex;
   height: 100vh;
   padding: 1rem 1.5rem;
-  background-image: url('https://source.unsplash.com/BfriYg0iOCs/1200x900');
+  background: ${props => `url(${props.background}) no-repeat top center`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

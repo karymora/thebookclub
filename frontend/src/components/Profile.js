@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { MyContext } from '../context'
 // import Button from '../components/Button/Button'
 // import { Link } from 'react-router-dom'
-import Sidebar from '../components/Sidebar/Sidebar'
+import Sidebar from '../components/Sidebar/StyledSidebar'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button/Button'
 
@@ -36,7 +36,7 @@ class Profile extends Component {
     console.log('>>>>>' + user.user._id)
     return (
       <div>
-        <Sidebar />
+        <Sidebar style={{ backgroundImage: `url(${user.user.image})` }} />
 
         <div className="profile-info-container">
           <div className="container">
