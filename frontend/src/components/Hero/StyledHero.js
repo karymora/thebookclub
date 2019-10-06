@@ -26,11 +26,19 @@ const StyledHero = styled.header`
     max-width: 800px;
     margin: auto;
     text-align: center;
+    color: white-space;
     h1 {
       margin-bottom: 2rem;
+      color: white;
     }
     button:first-of-type {
       margin-right: 1rem;
+    }
+    .title {
+      color: white;
+    }
+    .subtitle {
+      color: white;
     }
   }
 `

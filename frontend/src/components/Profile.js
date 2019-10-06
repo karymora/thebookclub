@@ -48,13 +48,41 @@ class Profile extends Component {
               <p className="title is-2 is-spaced">Genres</p>
               <p className="subtitle is-4">{user.user.genres}</p>
             </div>
-            <div className="profile-info-2">
+            {/* <div className="profile-info-2">
               <p className="title is-2 is-spaced">Email</p>
               <p className="subtitle is-4">{user.user.email}</p>
+            </div> */}
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">BookClub</p>
+              <p className="subtitle is-4">in course-</p>
             </div>
-            <Link to={`/allusers/edit/${user.user._id}`}>
-              <Button bg="black">Edit Profile</Button>
-            </Link>
+
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Books Read </p>
+              <p className="subtitle is-4">here :)</p>
+            </div>
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Bookfriends</p>
+              <p className="subtitle is-4">in course-</p>
+            </div>
+
+            <div className="button-container">
+              <div className="buttonaligns">
+                <Link to={`/allusers/edit/${user.user._id}`}>
+                  <Button bg="black">Edit Profile</Button>
+                </Link>
+              </div>
+              <div className="buttonaligns">
+                <Link to={`/all-books`}>
+                  <Button bg="black">Add Books</Button>
+                </Link>
+              </div>
+              <div className="buttonaligns">
+                <Link to={`/allmeetings`}>
+                  <Button bg="black">Join meeting</Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

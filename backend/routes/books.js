@@ -10,11 +10,9 @@ router.get('/allbooks', (req, res, next) => {
 })
 
 router.post('/:id/addToBookshelf', async (req, res, next) => {
-  const userBook = await User.findById(req.body.id)
   const theBook = await Book.findById(req.params.id)
-  console.log('this is the book ' + TheBook)
-  userBook.books.push(req.body.id)
-  await userBook.save()
+  theMeeting.assistants.push(req.body.id)
+  await theMeeting.save()
   res.status(201).json({ msg: 'Todo chido' })
 })
 

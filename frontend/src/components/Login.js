@@ -23,6 +23,7 @@ class Login extends Component {
     e.preventDefault()
     AUTH_SERVICE.login(this.state.user)
       .then(response => {
+        localStorage.setItem('user', JSON.stringify(response.data.user))
         this.context.logUser(response.data)
         this.props.history.push('/profile')
       })
@@ -30,6 +31,21 @@ class Login extends Component {
         console.log(error)
       })
   }
+  // onSubmit = e => {
+  //   e.preventDefault()
+  //   AUTH_SERVICE.login(this.state.user)
+  //     .then(response => {
+  //       localStorage.setItem('user', JSON.stringify(response.data.user))
+  //       if (response.data.user === 'user') {
+  //         this.props.history.push('/profile')
+  //       } else {
+  //         this.props.history.push('/login')
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   render() {
     console.log(this.state.user)

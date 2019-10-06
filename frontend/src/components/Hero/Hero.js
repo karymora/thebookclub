@@ -7,7 +7,9 @@ const Hero = () => {
   return (
     <StyledHero>
       <div className="content">
-        <p className="brand title is-1">The Book Club</p>
+        <p className="brand title is-1" color="white">
+          The Book Club
+        </p>
         <p className="brand subtitle is-3">
           Encuentra tu libro, encuentra tu comunidad
         </p>

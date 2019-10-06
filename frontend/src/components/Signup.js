@@ -40,7 +40,7 @@ class Signup extends Component {
   }
 
   render() {
-    const { user } = this.state.user
+    const user = this.state.user
     console.log('+++++' + user)
     return (
       <div

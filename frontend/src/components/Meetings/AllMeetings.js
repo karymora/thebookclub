@@ -2,13 +2,21 @@ import React, { Component } from 'react'
 import { Card, Icon, Form } from 'antd'
 import axios from 'axios'
 import Button from '../Button/StyledButton'
-import MyProvider from '../../context/index'
+import MyProvider, { MyContext } from '../../context/index'
 
 // const User = require('../models/User')
 
 export default class AllMeetings extends Component {
   state = {
-    meetings: []
+    meetings: [],
+    user: {
+      username: '',
+      email: '',
+      genres: '',
+      description: '',
+      contacts: []
+    },
+    user: JSON.parse(localStorage.getItem('user'))
   }
 
   componentDidMount() {
@@ -16,7 +24,9 @@ export default class AllMeetings extends Component {
       .get('http://localhost:3000/meetings/allmeetings')
       .then(response => {
         this.setState({ meetings: response.data.meeting })
-        console.log(this.state.meetings)
+        const userInfo = this.state.user._id
+        console.log('+++++' + userInfo)
+        // console.log(this.state.meetings)
       })
       .catch(error => {
         console.log(error)
@@ -44,20 +54,27 @@ export default class AllMeetings extends Component {
   }
 
   joinMeeting = async meetingId => {
-    const userId = { id: '5d958c4e17305210f6ce4088' }
-    console.log('>>>>' + MyProvider.state)
-    const { data } = await axios.post(
+    const userId = { id: this.state.user._id }
+    const data = await axios.post(
       `http://localhost:3000/meetings/${meetingId}/meetingregister`,
       userId
     )
-    console.log(data)
+    console.log('****' + userId)
+    console.log('dataaaaa' + userId)
   }
 
   render() {
     let { meetings } = this.state
+    const { user } = this.state.user
+    console.log('>>>>> this is the user' + user)
+
+    console.log(console.log('aquí abajo!!!!! '))
+    console.log('the props' + this.props[0])
+    console.log('the props' + this.props[1])
     console.log(meetings)
     console.log('si estoy entrando!')
     return (
+      // <MyContext.Consumer>
       <div
         style={{
           display: 'flex',
@@ -111,6 +128,9 @@ export default class AllMeetings extends Component {
           </Card>
         ))}
       </div>
+      // </MyContext.Consumer>
     )
   }
 }
+
+AllMeetings.contextType = MyContext

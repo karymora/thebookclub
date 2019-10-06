@@ -87,3 +87,12 @@ button {
 .profile-content {
   display: inline-block;
 }
+
+.button-container {
+  display: flex;
+}
+
+.buttonaligns {
+  display: inline-block;
+  margin-right: 200px;
+}
