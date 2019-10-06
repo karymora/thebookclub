@@ -33,17 +33,15 @@ app.use(
 
 app.use(
   session({
+    resave: false,
+    saveUninitialized: true,
     secret: process.env.SECRET,
-    resave: true,
     cookie: {
-      maxAge: 6000000000
-    },
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection,
-      ttl: 24 * 6000 * 6000 // 1 day
-    })
+      maxAge: 1000 * 60 * 60
+    }
   })
 )
+
 app.use(passport.initialize())
 app.use(passport.session())
 

@@ -1,11 +1,21 @@
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/Book')
+const User = require('../models/User')
 
 router.get('/allbooks', (req, res, next) => {
   Book.find()
     .then(book => res.status(200).json({ book }))
     .catch(error => res.status(500).json({ error }))
+})
+
+router.post('/:id/addToBookshelf', async (req, res, next) => {
+  const userBook = await User.findById(req.body.id)
+  const theBook = await Book.findById(req.params.id)
+  console.log('this is the book ' + TheBook)
+  userBook.books.push(req.body.id)
+  await userBook.save()
+  res.status(201).json({ msg: 'Todo chido' })
 })
 
 router.get('/allbooks/:id', (req, res, next) => {
