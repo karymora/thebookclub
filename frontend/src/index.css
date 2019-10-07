@@ -96,3 +96,73 @@ button {
   display: inline-block;
   margin-right: 200px;
 }
+
+.about {
+  height: 300 px;
+  margin: 50px;
+}
+
+.the-description {
+  display: flex;
+  position: relative;
+  height: 800px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.description-element {
+  display: display-block;
+  width: 22%;
+}
+
+.the-image {
+  display: block;
+  display: display-block;
+  width: 70%;
+}
+.the-image {
+  display: block;
+  align-content: center;
+  margin-left: 8%;
+}
+
+.the-text {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  /* background-color: pink; */
+  height: 400px;
+}
+
+.text-title {
+  font-family: 'Yeseva One', cursive;
+  padding-top: 30px;
+  font-size: 22px;
+}
+
+.text-subtitle {
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.login-Card {
+  background-color: white;
+  padding: 120px;
+}
+
+.header {
+  margin: 40px;
+  display: block;
+  align-content: center;
+  font-family: 'Yeseva One', cursive;
+  text-align: center;
+}
+
+.helper-text {
+  margin-top: 20px;
+}
+
+.sign-up-card {
+  background-color: white;
+  padding: 30px;
+}

@@ -25,10 +25,10 @@ class Profile extends Component {
     console.log(userinfo)
   }
 
-  // logout() {
-  //   localStorage.clear()
-  //   window.location.href = '/'
-  // }
+  logout() {
+    localStorage.clear()
+    window.location.href = '/'
+  }
 
   render() {
     const user = this.state
