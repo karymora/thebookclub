@@ -10,8 +10,10 @@ router.get('/allmeetings', (req, res, next) => {
     .catch(error => res.status(500).json({ error }))
 })
 
-router.get('/allmeetings/:id', (req, res, next) => {
-  Meeting.findById(req.params.id)
+router.get('/allmeetings/:id', async (req, res, next) => {
+  // Meeting.findById(req.params.id)
+  const meeting = await Meeting.findById(req.params.id)
+    .populate('assistants')
     .then(meeting => res.status(200).json({ meeting }))
     .catch(error => res.status(500).json({ error }))
 })

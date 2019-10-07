@@ -26,6 +26,8 @@ export default class MeetingDetail extends Component {
 
   render() {
     let { meeting } = this.state
+    const assistants = this.state.meeting.assistants
+    console.log('a verrrrr ' + this.state.meeting.assistants)
     console.log('este es el meeting', meeting)
 
     return (
@@ -33,12 +35,12 @@ export default class MeetingDetail extends Component {
         <div className="col-md-4">aquí va la foto</div>
         <div className="col-md-4">
           <div> {meeting && <p>{meeting.meetingName}</p>}</div>
-          <div>{meeting && <p>{meeting.meetingDetail}</p>}</div>
-          <div>{meeting && <p>{meeting.meetingDescription}</p>}</div>
+          {/* <div>{meeting && <p>{meeting.meetingDetail}</p>}</div>
+          <div>{meeting && <p>{meeting.meetingDescription}</p>}</div>  */}
         </div>
-        {meeting.assistants.map((assistant, i) => (
-          <div>{meeting.assistants[i]}</div>
-        ))}
+        {assistants.map((assistant, i) => (
+          <div key={i}>{assistant.username}</div>
+        ))}{' '}
       </div>
     )
   }

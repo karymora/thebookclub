@@ -4,7 +4,7 @@ import { MyContext } from '../context'
 // import { Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar/StyledSidebar'
 import { Link } from 'react-router-dom'
-import Button from '../components/Button/Button'
+import Button from '../components/Button/SimpleButton'
 
 class Profile extends Component {
   state = {
@@ -69,17 +69,23 @@ class Profile extends Component {
             <div className="button-container">
               <div className="buttonaligns">
                 <Link to={`/allusers/edit/${user.user._id}`}>
-                  <Button bg="black">Edit Profile</Button>
+                  <Button border="black" color="black">
+                    Edit Profile
+                  </Button>
                 </Link>
               </div>
               <div className="buttonaligns">
                 <Link to={`/all-books`}>
-                  <Button bg="black">Add Books</Button>
+                  <Button border="black" color="black">
+                    Add Books
+                  </Button>
                 </Link>
               </div>
               <div className="buttonaligns">
                 <Link to={`/allmeetings`}>
-                  <Button bg="black">Join meeting</Button>
+                  <Button border="black" color="black">
+                    Join meeting
+                  </Button>
                 </Link>
               </div>
             </div>
