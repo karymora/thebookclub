@@ -5,6 +5,7 @@ import { MyContext } from '../context'
 import Sidebar from '../components/Sidebar/StyledSidebar'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button/SimpleButton'
+import DetailCard from './Cards/DetailCard'
 
 class Profile extends Component {
   state = {
@@ -44,28 +45,6 @@ class Profile extends Component {
               <p className="title is-1">Welcome!!</p>
               <p className="subtitle is-3">{user.user.username}</p>
             </div>
-            <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Genres</p>
-              <p className="subtitle is-4">{user.user.genres}</p>
-            </div>
-            {/* <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Email</p>
-              <p className="subtitle is-4">{user.user.email}</p>
-            </div> */}
-            <div className="profile-info-2">
-              <p className="title is-2 is-spaced">BookClub</p>
-              <p className="subtitle is-4">in course-</p>
-            </div>
-
-            <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Books Read </p>
-              <p className="subtitle is-4">here :)</p>
-            </div>
-            <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Bookfriends</p>
-              <p className="subtitle is-4">in course-</p>
-            </div>
-
             <div className="button-container">
               <div className="buttonaligns">
                 <Link to={`/allusers/edit/${user.user._id}`}>
@@ -88,6 +67,30 @@ class Profile extends Component {
                   </Button>
                 </Link>
               </div>
+            </div>
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Genres</p>
+              <p className="subtitle is-4">{user.user.genres}</p>
+            </div>
+            {/* <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Email</p>
+              <p className="subtitle is-4">{user.user.email}</p>
+            </div> */}
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">BookClub</p>
+              <DetailCard>Holi!</DetailCard>
+            </div>
+
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Books Read </p>
+              <p className="subtitle is-4">here :)</p>
+              {/* <DetailCard></DetailCard> */}
+            </div>
+            <div className="profile-info-2">
+              <p className="title is-2 is-spaced">Bookfriends</p>
+              <p className="subtitle is-4">
+                <DetailCard>Holi!</DetailCard>
+              </p>
             </div>
           </div>
         </div>

@@ -28,8 +28,8 @@ const AUTH_SERVICE = {
     return await SERVICE.post('/joinmeeting', meeting)
   },
 
-  addBook: async book => {
-    return await SERVICE.post('/addbook', book)
+  addToBookshelf: async book => {
+    return await SERVICE.post('/addToBookshelf', book)
   }
 }
 

@@ -166,3 +166,22 @@ button {
   background-color: white;
   padding: 30px;
 }
+
+.the-assistants {
+  width: 500px;
+  height: 230px;
+  box-shadow: 8px 12px 9px -9px rgba(156, 156, 156, 0.79);
+  display: flex;
+  position: relative;
+}
+
+.assistant-image {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.assistant-name {
+  display: inline-block;
+}

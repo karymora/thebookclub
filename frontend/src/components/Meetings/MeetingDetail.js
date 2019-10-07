@@ -39,7 +39,12 @@ export default class MeetingDetail extends Component {
           <div>{meeting && <p>{meeting.meetingDescription}</p>}</div>  */}
         </div>
         {assistants.map((assistant, i) => (
-          <div key={i}>{assistant.username}</div>
+          <div className="the-assistants" key={i}>
+            <div className="assistant-image">
+              <img src={assistant.image} alt={'assistant.username'} />
+            </div>
+            <div className="assistant-name">{assistant.username}</div>
+          </div>
         ))}{' '}
       </div>
     )

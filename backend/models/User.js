@@ -30,12 +30,10 @@ const userSchema = new Schema(
       ]
     },
 
-    books: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Book'
-      }
-    ],
+    // booksRead: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Book'
+    // },
 
     description: String,
 

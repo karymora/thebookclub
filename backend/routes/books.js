@@ -9,12 +9,18 @@ router.get('/allbooks', (req, res, next) => {
     .catch(error => res.status(500).json({ error }))
 })
 
-router.post('/:id/addToBookshelf', async (req, res, next) => {
-  const theBook = await Book.findById(req.params.id)
-  theMeeting.assistants.push(req.body.id)
-  await theMeeting.save()
-  res.status(201).json({ msg: 'Todo chido' })
-})
+// router.get('/:id/addToBookshelf', (req, res, next) => {
+//   Book.findById(req.params.id)
+//     .then(book => res.status(200).json({ book }))
+//     .catch(error => res.status(500).json({ error }))
+// })
+
+// router.post('/:id/addToBookshelf', async (req, res, next) => {
+//   const theBook = await Book.findById(req.params.id)
+//   theBook.booksRead.push(req.body.id)
+//   await theBook.save()
+//   res.status(201).json({ msg: 'Book added' })
+// })
 
 router.get('/allbooks/:id', (req, res, next) => {
   Book.findById(req.params.id)

@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
 import { Card, Icon } from 'antd'
 import axios from 'axios'
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/SimpleButton'
 
 export default class BooksAll extends Component {
   state = {
-    books: []
+    books: [],
+    user: {
+      username: '',
+      email: '',
+      genres: '',
+      description: '',
+      contacts: [],
+      booksRead: []
+    },
+    user: JSON.parse(localStorage.getItem('user'))
   }
 
   componentDidMount() {
@@ -32,6 +41,18 @@ export default class BooksAll extends Component {
         })
       })
       .catch(err => console.log(err))
+  }
+
+  readBook = async bookId => {
+    const userReadId = { id: this.state.user._id }
+    console.log('user Id ', userReadId.id)
+    console.log('this is the book Id ' + bookId)
+    console.log('Este el user Id ', userReadId)
+    const { data } = await axios.post(
+      `http://localhost:3000/users/${userReadId.id}/addToBookshelf`,
+      bookId
+    )
+    console.log(data)
   }
 
   editBook = id => {
@@ -76,7 +97,7 @@ export default class BooksAll extends Component {
               />
             ]}
           >
-            <Button bg="black" onClick={() => this.editBook(book._id)}>
+            <Button color="black" onClick={() => this.readBook(book._id)}>
               Add to my Books
             </Button>
           </Card>
