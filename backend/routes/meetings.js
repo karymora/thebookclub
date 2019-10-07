@@ -16,7 +16,6 @@ router.get('/allmeetings/:id', (req, res, next) => {
     .catch(error => res.status(500).json({ error }))
 })
 
-
 router.post('/:id/meetingregister', async (req, res, next) => {
   const theMeeting = await Meeting.findById(req.params.id)
   theMeeting.assistants.push(req.body.id)

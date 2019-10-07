@@ -24,7 +24,7 @@ export default class AllMeetings extends Component {
       .get('http://localhost:3000/meetings/allmeetings')
       .then(response => {
         this.setState({ meetings: response.data.meeting })
-        const userInfo = this.state.user._id
+        const userInfo = this.state.user
         console.log('+++++' + userInfo)
         // console.log(this.state.meetings)
       })
@@ -54,7 +54,8 @@ export default class AllMeetings extends Component {
   }
 
   joinMeeting = async meetingId => {
-    const userId = { id: this.state.user._id }
+    const userId = { id: this.state.user }
+    console.log('Este es el seeeeeer', userId)
     const data = await axios.post(
       `http://localhost:3000/meetings/${meetingId}/meetingregister`,
       userId

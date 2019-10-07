@@ -14,6 +14,7 @@ import CreateBooks from './components/Books/CreateBooks'
 import BooksAll from './components/Books/BooksAll'
 import CreateMeetings from './components/Meetings/CreateMeetings'
 import EditUser from './components/users/EditUser'
+import MeetingDetail from './components/Meetings/MeetingDetail'
 
 // import EditUser from './components/users/EditUser'
 
@@ -37,6 +38,7 @@ const Router = user => (
       <Route exact path="/addbook" component={CreateBooks} />
       <Route exact path="/addmeeting" component={CreateMeetings} />
       <Route exact path="/allmeetings" component={AllMeetings} />
+      <Route exact path="/allmeetings/meetings/:id" component={MeetingDetail} />
       <Route exact path="/allusers/users/:id" component={UserDetail} />
       <Route exact path="/allusers/edit/:id" component={EditUser} />
     </Switch>
