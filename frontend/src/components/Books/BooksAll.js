@@ -55,6 +55,8 @@ export default class BooksAll extends Component {
       { id: book }
     )
     console.log('this is data', data)
+
+    return this.props.history.push('/profile', { new: true })
   }
 
   editBook = id => {
