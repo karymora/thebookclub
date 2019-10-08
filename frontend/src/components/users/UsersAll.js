@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Icon, Form } from 'antd'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 // const User = require('../models/User')
@@ -54,6 +55,19 @@ export default class UsersAll extends Component {
           height: '100vh'
         }}
       >
+        <div className="header-new">
+          <div className="header2">
+            <h1>Encuentra un nuevo amigo</h1>
+          </div>
+          <div>
+            <div className="header2">
+              <Link to={`/addmeeting`}>
+                <h2>lectores cerca de tí</h2>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {users.map((user, i) => (
           // <div className="user-container col-md-4 offset-md-4" key={i}>
           //   <div className="container">{user.email}</div>

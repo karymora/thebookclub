@@ -89,16 +89,17 @@ export default class AllMeetings extends Component {
         }}
       >
         <div className="header-new">
-          <div className="text-title">
+          <div className="header2">
             <h1>Reuniones cerca de tí</h1>
           </div>
           <div>
-            <Link to={`/addmeeting`}>
-              <h2>Agrega una reuinón</h2>
-            </Link>
+            <div className="header2">
+              <Link to={`/addmeeting`}>
+                <h2>Agrega una reuninón</h2>
+              </Link>
+            </div>
           </div>
         </div>
-
         {meetings.map((meeting, i) => (
           // <div className="user-container col-md-4 offset-md-4" key={i}>
           //   <div className="container">{user.email}</div>

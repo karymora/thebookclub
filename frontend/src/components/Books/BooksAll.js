@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Card, Icon } from 'antd'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import Button from '../../components/Button/SimpleButton'
+import TopBar from '../TopBar'
 
 export default class BooksAll extends Component {
   state = {
@@ -28,7 +30,6 @@ export default class BooksAll extends Component {
         console.log(error)
       })
   }
-
   deleteBook = id => {
     axios
       .delete(`http://localhost:3000/books/allbooks/${id}`)
@@ -43,15 +44,15 @@ export default class BooksAll extends Component {
       .catch(err => console.log(err))
   }
 
-  readBook = async bookId => {
+  readBook = async book => {
     const userReadId = this.state.user._id
     console.log('user Id ', userReadId)
-    console.log('this is the book Id ' + bookId)
+    console.log('this is the book Id ' + book)
     console.log('Este el user Id ', userReadId)
 
     const { data } = await axios.post(
       `http://localhost:3000/users/${userReadId}/addToBookshelf`,
-      { id: bookId }
+      { id: book }
     )
     console.log('this is data', data)
   }
@@ -65,44 +66,62 @@ export default class BooksAll extends Component {
     console.log(books)
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          width: '80vw',
-          height: '100vh'
-        }}
-      >
-        {books.map((book, i) => (
-          // <div className="user-container col-md-4 offset-md-4" key={i}>
-          //   <div className="container">{user.email}</div>
-          // </div>
+      <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            width: '100vw',
+            height: '100vh',
+            marginTop: '40px'
+          }}
+        >
+          <div className="header-new">
+            <div className="header2">
+              <h1>Encuentra tu nuevo libro favorito </h1>
+            </div>
+            <div>
+              <div className="header2">
+                <Link to={`/addbook`}>
+                  <h2>Próximas reuniones</h2>
+                </Link>
+              </div>
+            </div>
+          </div>
 
-          <Card
-            title={book.title}
-            key={book._id}
-            style={{ width: '25%' }}
-            cover={<img src={book.imageBook} alt={book.title} height="500px" />}
-            actions={[
-              <Icon
-                type="delete"
-                key="delete"
-                onClick={() => this.deleteBook(book._id)}
-              />,
-              <Icon
-                type="edit"
-                key="edit"
-                onClick={() => this.editBook(book._id)}
-              />
-            ]}
-          >
-            <Button color="black" onClick={() => this.readBook(book._id)}>
-              Add to my Books
-            </Button>
-          </Card>
-        ))}
+          {books.map((book, i) => (
+            // <div className="user-container col-md-4 offset-md-4" key={i}>
+            //   <div className="container">{user.email}</div>
+            // </div>
+
+            <Card
+              title={book.title}
+              key={book._id}
+              style={{ width: '25%' }}
+              cover={
+                <img src={book.imageBook} alt={book.title} height="500px" />
+              }
+              actions={[
+                <Icon
+                  type="delete"
+                  key="delete"
+                  onClick={() => this.deleteBook(book._id)}
+                />,
+                <Icon
+                  type="edit"
+                  key="edit"
+                  onClick={() => this.editBook(book._id)}
+                />
+              ]}
+            >
+              <Button color="black" onClick={() => this.readBook(book._id)}>
+                Add to my Books
+              </Button>
+            </Card>
+          ))}
+        </div>
       </div>
     )
   }

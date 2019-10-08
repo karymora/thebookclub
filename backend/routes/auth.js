@@ -12,8 +12,15 @@ router.post('/signup', (req, res, next) => {
 })
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
-  const { user } = req
-  res.status(200).json({ user })
+  // const { user } = req
+  //
+  const { username } = req.user
+  User.findOne({ username })
+    .populate('booksRead')
+    .then(user => {
+      console.log('este es el user con libros papá', user)
+      res.status(200).json({ user })
+    })
 })
 
 // router.post('/login', (req, res, next) => {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { MyContext } from '../../context/index'
+import TopBar from '../../components/TopBar'
 //import Sidebar from '../../components/Sidebar/Sidebar'
+
 import axios from 'axios'
 //import { Card } from 'antd'
 
@@ -32,7 +34,7 @@ export default class MeetingDetail extends Component {
 
     return (
       <div className="col-md-8 offset-md-2">
-        <div className="col-md-4">aquí va la foto</div>
+        {/* <TopBar></TopBar> */}
         <div className="col-md-4">
           <div> {meeting && <p>{meeting.meetingName}</p>}</div>
           {/* <div>{meeting && <p>{meeting.meetingDetail}</p>}</div>
