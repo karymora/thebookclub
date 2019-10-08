@@ -14,7 +14,8 @@ class Profile extends Component {
       email: '',
       genres: '',
       description: '',
-      contacts: []
+      contacts: [],
+      booksRead: []
     }
   }
 
@@ -33,18 +34,23 @@ class Profile extends Component {
 
   render() {
     const user = this.state
-    const { id } = this.props.match.params
+    const booksRead = this.state.user.booksRead
+    // const { id } = this.props.match.params
     console.log('>>>>>' + user.user._id)
-    return (
-      <div>
-        <Sidebar style={{ backgroundImage: `url(${user.user.image})` }} />
+    console.log('a verrrrr los libros ' + this.state.user.booksRead)
 
+    return (
+      <div className="profile-all">
+        <div className="theSideBar">
+          <Sidebar style={{ backgroundImage: `url(${user.user.image})` }} />
+        </div>
         <div className="profile-info-container">
           <div className="container">
-            <div className="container">
-              <p className="title is-1">Welcome!!</p>
-              <p className="subtitle is-3">{user.user.username}</p>
+            <div className="welcome-user">
+              <p className="header2">Welcome!!</p>
+              <p className="header2">{user.user.username}</p>
             </div>
+            <hr></hr>
             <div className="button-container">
               <div className="buttonaligns">
                 <Link to={`/allusers/edit/${user.user._id}`}>
@@ -67,29 +73,43 @@ class Profile extends Component {
                   </Button>
                 </Link>
               </div>
+              <div className="buttonaligns">
+                <Link to={`/searchfriends`}>
+                  <Button border="black" color="black">
+                    Search friends
+                  </Button>
+                </Link>
+              </div>
+
+              <hr></hr>
             </div>
             <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Genres</p>
-              <p className="subtitle is-4">{user.user.genres}</p>
+              <p className="header3">Genres</p>
+              <p className="thesubtitles">{user.user.genres}</p>
             </div>
-            {/* <div className="profile-info-2">
+            {/* {/* <div className="profile-info-2">
               <p className="title is-2 is-spaced">Email</p>
               <p className="subtitle is-4">{user.user.email}</p>
             </div> */}
-            <div className="profile-info-2">
+            {/* <div className="profile-info-2">
               <p className="title is-2 is-spaced">BookClub</p>
-              <DetailCard>Holi!</DetailCard>
-            </div>
+              <DetailCard>BookClub pending</DetailCard>
+            </div> */}
+            <div className="profile-info-2">
+              <p className="header3">Books Read </p>
 
-            <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Books Read </p>
-              <p className="subtitle is-4">here :)</p>
-              {/* <DetailCard></DetailCard> */}
+              {booksRead.map((bookread, i) => (
+                <div className="the-assistants" key={i}>
+                  <div>
+                    <p>{bookread.image}</p>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="profile-info-2">
-              <p className="title is-2 is-spaced">Bookfriends</p>
-              <p className="subtitle is-4">
-                <DetailCard>Holi!</DetailCard>
+              <p className="header3">Bookfriends</p>
+              <p className="thesubtitles">
+                <DetailCard>Friendships</DetailCard>
               </p>
             </div>
           </div>

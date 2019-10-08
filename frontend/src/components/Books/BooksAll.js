@@ -44,15 +44,16 @@ export default class BooksAll extends Component {
   }
 
   readBook = async bookId => {
-    const userReadId = { id: this.state.user._id }
-    console.log('user Id ', userReadId.id)
+    const userReadId = this.state.user._id
+    console.log('user Id ', userReadId)
     console.log('this is the book Id ' + bookId)
     console.log('Este el user Id ', userReadId)
+
     const { data } = await axios.post(
-      `http://localhost:3000/users/${userReadId.id}/addToBookshelf`,
-      bookId
+      `http://localhost:3000/users/${userReadId}/addToBookshelf`,
+      { id: bookId }
     )
-    console.log(data)
+    console.log('this is data', data)
   }
 
   editBook = id => {
@@ -68,9 +69,9 @@ export default class BooksAll extends Component {
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-evenly',
+          justifyContent: 'center',
           flexWrap: 'wrap',
-          width: '100vw',
+          width: '80vw',
           height: '100vh'
         }}
       >

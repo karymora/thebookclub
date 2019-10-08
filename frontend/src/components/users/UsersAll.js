@@ -61,7 +61,7 @@ export default class UsersAll extends Component {
 
           <Card
             title={user.username}
-            actions
+            actions={[]}
             key={user._id}
             style={{ width: '25%' }}
             cover={

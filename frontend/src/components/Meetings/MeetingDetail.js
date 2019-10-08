@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { MyContext } from '../../context/index'
-import Sidebar from '../../components/Sidebar/Sidebar'
+//import Sidebar from '../../components/Sidebar/Sidebar'
 import axios from 'axios'
-import { Card } from 'antd'
+//import { Card } from 'antd'
 
 export default class MeetingDetail extends Component {
   state = {

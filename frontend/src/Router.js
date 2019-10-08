@@ -41,6 +41,7 @@ const Router = user => (
       <Route exact path="/allmeetings/meetings/:id" component={MeetingDetail} />
       <Route exact path="/allusers/users/:id" component={UserDetail} />
       <Route exact path="/allusers/edit/:id" component={EditUser} />
+      <Route exact path="/searchfriends" component={UsersAll} />
     </Switch>
   </BrowserRouter>
 )

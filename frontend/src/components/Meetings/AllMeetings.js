@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Card, Icon, Form } from 'antd'
+import { Card, Icon } from 'antd'
 import axios from 'axios'
-import Button from '../Button/StyledButton'
-import MyProvider, { MyContext } from '../../context/index'
+import { Link } from 'react-router-dom'
+import Button from '../Button/SimpleButton'
+//import MyProvider, { MyContext } from '../../context/index'
+import { MyContext } from '../../context/index'
 
 // const User = require('../models/User')
 
@@ -86,6 +88,17 @@ export default class AllMeetings extends Component {
           height: '100vh'
         }}
       >
+        <div className="header-new">
+          <div className="text-title">
+            <h1>Reuniones cerca de tí</h1>
+          </div>
+          <div>
+            <Link to={`/addmeeting`}>
+              <h2>Agrega una reuinón</h2>
+            </Link>
+          </div>
+        </div>
+
         {meetings.map((meeting, i) => (
           // <div className="user-container col-md-4 offset-md-4" key={i}>
           //   <div className="container">{user.email}</div>
@@ -121,10 +134,8 @@ export default class AllMeetings extends Component {
               />
             ]}
           >
-            <div>{meeting.assistants}</div>
-
             <Button bg="black" onClick={() => this.joinMeeting(meeting._id)}>
-              Click me
+              Unirte a al reunion
             </Button>
           </Card>
         ))}

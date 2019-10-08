@@ -62,8 +62,6 @@ class Login extends Component {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           minHeight: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
           flexDirection: 'column',
           width: '100vw',
           height: '100vh'

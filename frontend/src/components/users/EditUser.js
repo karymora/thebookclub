@@ -19,7 +19,7 @@ class EditUser extends Component {
   }
 
   componentDidMount() {
-    let { user } = this.state
+    //let { user } = this.state
     const { id } = this.props.match.params
     axios
       .get(`http://localhost:3000/users/allusers/${id}`)
@@ -38,7 +38,8 @@ class EditUser extends Component {
 
   onSubmit = e => {
     e.preventDefault()
-    let { user, form } = this.state
+    // let { user, form } = this.state
+    let { user } = this.state
     const { id } = this.props.match.params
     axios
       .put(`http://localhost:3000/users/allusers/${id}`, user)

@@ -5,7 +5,6 @@ const StyledSidebar = styled.nav`
   width: 35%;
   top: 0;
   left: 0;
-  display: flex;
   height: 100vh;
   padding: 1rem 1.5rem;
   background: ${props => `url(${props.background}) no-repeat top center`};

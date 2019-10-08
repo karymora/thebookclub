@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AUTH_SERVICE from '../../services/index'
 import Button from '../../components/Button/Button'
-import { MyContext } from '../../context'
+//import { MyContext } from '../../context'
 
 export default class CreateMeetings extends Component {
   state = {

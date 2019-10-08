@@ -8,9 +8,9 @@ function Home() {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <Link class="navbar-brand" href="#">
           Navbar w/ text
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -25,19 +25,19 @@ function Home() {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" href="#">
                 Home <span class="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" href="#">
                 Features
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" href="#">
                 Pricing
-              </a>
+              </Link>
             </li>
           </ul>
           <span class="navbar-text">Navbar text with an inline element</span>
@@ -48,7 +48,7 @@ function Home() {
         <div className="the-description">
           <div className="description-element">
             <div className="the-image">
-              <img src={'https://svgshare.com/i/FN4.svg'} />
+              <img src={'https://svgshare.com/i/FN4.svg'} alt={'news'} />
             </div>
             <div className="the-text">
               <div className="text-title">Novedades</div>
@@ -59,7 +59,7 @@ function Home() {
           </div>
           <div className="description-element">
             <div className="the-image">
-              <img src={'https://svgshare.com/i/FNv.svg'} />
+              <img src={'https://svgshare.com/i/FNv.svg'} alt={'book'} />
             </div>
             <div className="the-text">
               <div className="text-title">Encuentra</div>
@@ -68,7 +68,7 @@ function Home() {
           </div>
           <div className="description-element">
             <div className="the-image">
-              <img src={'https://svgshare.com/i/FMg.svg'} />
+              <img src={'https://svgshare.com/i/FMg.svg'} alt={'meeting'} />
             </div>
             <div className="the-text">
               <div className="text-title">Una reunión</div>
@@ -77,7 +77,7 @@ function Home() {
           </div>
           <div className="description-element">
             <div className="the-image">
-              <img src={'https://svgshare.com/i/FNT.svg'} />
+              <img src={'https://svgshare.com/i/FNT.svg'} alt={'people'} />
             </div>
             <div className="the-text">
               {' '}

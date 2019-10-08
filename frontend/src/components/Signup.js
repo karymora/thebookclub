@@ -16,7 +16,7 @@ class Signup extends Component {
       image: '',
       description: '',
       contacts: '',
-      booksRead: ''
+      booksRead: []
     }
   }
 
@@ -57,7 +57,6 @@ class Signup extends Component {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             minHeight: '100vh',
-            display: 'flex',
             flexDirection: 'column',
             width: '100vw',
             height: '100vh'
@@ -154,6 +153,7 @@ class Signup extends Component {
                         }}
                         className="form-control"
                         onChange={this.handleInput}
+                        placeholder="user"
                         type="text"
                         name="role"
                         value={user.role}
@@ -175,6 +175,7 @@ class Signup extends Component {
                         className="form-control"
                         onChange={this.handleInput}
                         type="text"
+                        placeholder="café or bar"
                         name="placePreference"
                         value={user.placePreference}
                       />
@@ -213,6 +214,7 @@ class Signup extends Component {
                         onChange={this.handleInput}
                         type="text"
                         name="genres"
+                        placeholder="fantasy, historic, romance, horror, thriller, mystery or dystopia"
                         value={user.genres}
                       />
                     </div>
