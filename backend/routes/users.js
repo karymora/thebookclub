@@ -22,18 +22,17 @@ router.put('/allusers/:id', (req, res, next) => {
 })
 
 router.get('/:id/addToBookshelf', (req, res, next) => {
-  Book.findById(req.params.id)
+  User.findById(req.params.id)
     .then(book => res.status(200).json({ book }))
     .catch(error => res.status(500).json({ error }))
 })
 
 router.post('/:id/addToBookshelf', async (req, res, next) => {
-  const currentBook = await Book.findById(req.body.id)
-  const currentUser = await User.findByIdAndUpdate(req.params.id, {
-    booksRead: currentBook
-  })
-
-  res.status(200).json({ currentBook, currentUser })
+  const userShelf = await User.findById(req.params.id)
+  userShelf.booksRead.push(req.body.id)
+  const userModified = await userShelf.save()
+  console.log(req.body.id)
+  res.status(200).json(userModified)
 })
 
 router.delete('/allusers/:id', (req, res, next) => {

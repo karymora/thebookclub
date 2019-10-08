@@ -20,7 +20,7 @@ router.get('/allmeetings/:id', async (req, res, next) => {
 
 router.post('/:id/meetingregister', async (req, res, next) => {
   const theMeeting = await Meeting.findById(req.params.id)
-  theMeeting.assistants.push(req.body.id)
+  theMeeting.assistants.push(req.body)
   await theMeeting.save()
   res.status(201).json({ msg: 'Todo chido' })
 })
