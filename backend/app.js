@@ -27,7 +27,7 @@ const app = express()
 app.use(
   cors({
     credentials: true,
-    origin: [process.env.FRONTENDPOINT]
+    origin: ['https://optimistic-jackson-b43919.netlify.com']
   })
 )
 
