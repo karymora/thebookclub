@@ -24,7 +24,7 @@ export default class AllMeetings extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3000/meetings/allmeetings')
+      .get('https://shielded-badlands-63465.herokuapp.com/meetings/allmeetings')
       .then(response => {
         this.setState({ meetings: response.data.meeting })
         const userInfo = this.state.user
@@ -38,7 +38,7 @@ export default class AllMeetings extends Component {
 
   deleteMeeting = id => {
     axios
-      .delete(`http://localhost:3000/meetings/allmeetings/${id}`)
+      .delete(`https://shielded-badlands-63465.herokuapp.com/meetings/allmeetings/${id}`)
       .then(response => {
         this.setState(prevState => {
           return {
@@ -60,7 +60,7 @@ export default class AllMeetings extends Component {
     const userId = { id: this.state.user }
     // console.log('Este es el seeeeeer', userId)
     const data = await axios.post(
-      `http://localhost:3000/meetings/${meetingId}/meetingregister`,
+      `https://shielded-badlands-63465.herokuapp.com/meetings/${meetingId}/meetingregister`,
       userId
     )
     // console.log('****' + userId)

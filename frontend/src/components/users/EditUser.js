@@ -23,7 +23,7 @@ class EditUser extends Component {
     //let { user } = this.state
     const { id } = this.props.match.params
     axios
-      .get(`http://localhost:3000/users/allusers/${id}`)
+      .get(`https://shielded-badlands-63465.herokuapp.com/users/allusers/${id}`)
       .then(response => {
         this.setState(prevState => {})
       })
@@ -43,7 +43,7 @@ class EditUser extends Component {
     let { user } = this.state
     const { id } = this.props.match.params
     axios
-      .put(`http://localhost:3000/users/allusers/${id}`, user)
+      .put(`https://shielded-badlands-63465.herokuapp.com/users/allusers/${id}`, user)
       .then(({ data }) => {
         // console.log(data)
         this.setState({

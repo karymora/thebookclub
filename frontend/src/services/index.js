@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'http://localhost:3000/auth'
+const baseURL = 'https://shielded-badlands-63465.herokuapp.com/auth'
 
 const SERVICE = axios.create({ withCredentials: true, baseURL })
 

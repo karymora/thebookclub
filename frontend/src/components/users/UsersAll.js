@@ -13,7 +13,7 @@ export default class UsersAll extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3000/users/allusers')
+      .get('https://shielded-badlands-63465.herokuapp.com/users/allusers')
       .then(response => {
         this.setState({ users: response.data.user })
         console.log(this.state.users)
@@ -25,7 +25,9 @@ export default class UsersAll extends Component {
 
   deleteUser = id => {
     axios
-      .delete(`http://localhost:3000/users/allusers/${id}`)
+      .delete(
+        `https://shielded-badlands-63465.herokuapp.com/users/allusers/${id}`
+      )
       .then(response => {
         this.setState(prevState => {
           return {

@@ -11,7 +11,9 @@ export default class UserDetail extends Component {
     const { id } = this.props.match.params
     const {
       data: { user }
-    } = await axios.get(`http://localhost:3000/users/allusers/${id}`)
+    } = await axios.get(
+      `https://shielded-badlands-63465.herokuapp.com/users/allusers/${id}`
+    )
     this.setState({
       user
     })

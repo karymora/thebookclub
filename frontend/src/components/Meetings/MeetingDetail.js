@@ -20,7 +20,9 @@ export default class MeetingDetail extends Component {
     const { id } = this.props.match.params
     const {
       data: { meeting }
-    } = await axios.get(`http://localhost:3000/meetings/allmeetings/${id}`)
+    } = await axios.get(
+      `https://shielded-badlands-63465.herokuapp.com/meetings/allmeetings/${id}`
+    )
     this.setState({
       meeting
     })

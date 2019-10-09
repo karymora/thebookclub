@@ -22,7 +22,7 @@ export default class BooksAll extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3000/books/allbooks')
+      .get('https://shielded-badlands-63465.herokuapp.com/books/allbooks')
       .then(response => {
         this.setState({ books: response.data.book })
         // console.log(this.state.books)
@@ -33,7 +33,7 @@ export default class BooksAll extends Component {
   }
   deleteBook = id => {
     axios
-      .delete(`http://localhost:3000/books/allbooks/${id}`)
+      .delete(`https://shielded-badlands-63465.herokuapp.com/books/allbooks/${id}`)
       .then(response => {
         this.setState(prevState => {
           return {
@@ -52,7 +52,7 @@ export default class BooksAll extends Component {
     // console.log('Este el user Id ', userReadId)
 
     const { data } = await axios.post(
-      `http://localhost:3000/users/${userReadId}/addToBookshelf`,
+      `https://shielded-badlands-63465.herokuapp.com/users/${userReadId}/addToBookshelf`,
       { id: book }
     )
     // console.log('this is data', data)
