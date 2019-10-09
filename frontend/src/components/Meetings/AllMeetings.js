@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Button/SimpleButton'
 //import MyProvider, { MyContext } from '../../context/index'
 import { MyContext } from '../../context/index'
+import StyledNavbar from '../../components/Navbar/StyledNavbar'
 
 // const User = require('../models/User')
 
@@ -80,69 +81,72 @@ export default class AllMeetings extends Component {
     // console.log(meetings)
     // console.log('si estoy entrando!')
     return (
-      // <MyContext.Consumer>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
-          flexWrap: 'wrap',
-          width: '100vw',
-          height: '100vh'
-        }}
-      >
-        <div className="header-new">
-          <div className="header2">
-            <h1>Reuniones cerca de tí</h1>
-          </div>
-          <div>
+      <div>
+        <StyledNavbar></StyledNavbar>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+            flexWrap: 'wrap',
+            width: '100vw',
+            height: '100vh',
+            marginTop: '40px'
+          }}
+        >
+          <div className="header-new">
             <div className="header2">
-              <Link to={`/addmeeting`}>
-                <h2>Agrega una reuninón</h2>
-              </Link>
+              <h1>Reuniones cerca de tí</h1>
+            </div>
+            <div>
+              <div className="header2">
+                <Link to={`/addmeeting`}>
+                  <h2>Agrega una reuninón</h2>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        {meetings.map((meeting, i) => (
-          // <div className="user-container col-md-4 offset-md-4" key={i}>
-          //   <div className="container">{user.email}</div>
-          // </div>
+          {meetings.map((meeting, i) => (
+            // <div className="user-container col-md-4 offset-md-4" key={i}>
+            //   <div className="container">{user.email}</div>
+            // </div>
 
-          <Card
-            title={meeting.meetingName}
-            actions
-            key={meeting._id}
-            style={{ width: '25%' }}
-            cover={
-              <img
-                src={meeting.img}
-                alt={meeting.meetingName}
-                height="500px"
-                onClick={() =>
-                  this.props.history.push(
-                    `/allmeetings/meetings/${meeting._id}`
-                  )
-                }
-              />
-            }
-            actions={[
-              <Icon
-                type="delete"
-                key="delete"
-                onClick={() => this.deleteMeeting(meeting._id)}
-              />,
-              <Icon
-                type="edit"
-                key="edit"
-                onClick={() => this.editMeeting(meeting._id)}
-              />
-            ]}
-          >
-            <Button bg="black" onClick={() => this.joinMeeting(meeting._id)}>
-              Unirte a al reunion
-            </Button>
-          </Card>
-        ))}
+            <Card
+              title={meeting.meetingName}
+              actions
+              key={meeting._id}
+              style={{ width: '25%' }}
+              cover={
+                <img
+                  src={meeting.img}
+                  alt={meeting.meetingName}
+                  height="500px"
+                  onClick={() =>
+                    this.props.history.push(
+                      `/allmeetings/meetings/${meeting._id}`
+                    )
+                  }
+                />
+              }
+              actions={[
+                <Icon
+                  type="delete"
+                  key="delete"
+                  onClick={() => this.deleteMeeting(meeting._id)}
+                />,
+                <Icon
+                  type="edit"
+                  key="edit"
+                  onClick={() => this.editMeeting(meeting._id)}
+                />
+              ]}
+            >
+              <Button bg="black" onClick={() => this.joinMeeting(meeting._id)}>
+                Unirte a al reunion
+              </Button>
+            </Card>
+          ))}
+        </div>
       </div>
       // </MyContext.Consumer>
     )

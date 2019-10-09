@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button/SimpleButton'
 import TopBar from '../TopBar'
+import StyledNavbar from '../../components/Navbar/StyledNavbar'
 
 export default class BooksAll extends Component {
   state = {
@@ -70,11 +71,12 @@ export default class BooksAll extends Component {
 
     return (
       <div>
+        <StyledNavbar></StyledNavbar>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'space-evenly',
             flexWrap: 'wrap',
             width: '100vw',
             height: '100vh',
@@ -102,7 +104,7 @@ export default class BooksAll extends Component {
             <Card
               title={book.title}
               key={book._id}
-              style={{ width: '15%' }}
+              style={{ width: '20%' }}
               cover={
                 <img
                   src={book.imageBook}

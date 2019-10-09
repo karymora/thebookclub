@@ -32,11 +32,15 @@ button {
   color: white;
 }
 
+#navbarText {
+  font-size: 18px;
+}
+
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid black;
   margin: 1em 0;
   padding: 0;
 }
@@ -57,7 +61,7 @@ hr {
 .profile-info-container {
   position: absolute;
   width: 60%;
-  top: 0;
+  top: 50px;
   left: 36%;
   padding: 1rem 1.5rem;
   background-position: center;
@@ -244,4 +248,14 @@ hr {
   margin-top: 5%;
   font-size: 50px;
   z-index: 1;
+}
+
+.the-title {
+  align-content: center;
+  display: block;
+  text-align: center;
+}
+
+.nav-item {
+  padding: 20px;
 }

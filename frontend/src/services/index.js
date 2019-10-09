@@ -11,7 +11,7 @@ const AUTH_SERVICE = {
     return await SERVICE.post('/login', user)
   },
   logOut: async () => {
-    return await SERVICE.get('/logout')
+    return await SERVICE.get('/')
   },
   edit: async updateUser => {
     return await SERVICE.put('/edit', updateUser)

@@ -8,9 +8,7 @@ function Home() {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <Link class="navbar-brand" href="#">
-          Navbar w/ text
-        </Link>
+        <Link class="navbar-brand" href="#"></Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -25,22 +23,23 @@ function Home() {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to={`/`}>
                 Home <span class="sr-only">(current)</span>
               </Link>
             </li>
+
             <li class="nav-item">
-              <Link class="nav-link" href="#">
-                Features
+              <Link class="nav-link" to={`/signup`}>
+                Sign up
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
-                Pricing
+              <Link class="nav-link" to={`/login`}>
+                Log In
               </Link>
             </li>
           </ul>
-          <span class="navbar-text">Navbar text with an inline element</span>
+          <span class="navbar-text">The Book Club</span>
         </div>
       </nav>
       <Hero />
