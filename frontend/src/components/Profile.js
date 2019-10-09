@@ -24,7 +24,7 @@ class Profile extends Component {
       return this.props.history.push('/login', { new: true })
     const userinfo = this.context.state.loggedUser
     this.setState(userinfo)
-    console.log(userinfo)
+    // console.log(userinfo)
   }
 
   logout() {
@@ -37,11 +37,11 @@ class Profile extends Component {
     const booksRead = user.booksRead
 
     // const { id } = this.props.match.params
-    console.log('>>>>>' + user)
-    console.log('a verrrrr los libros ' + booksRead)
-    booksRead.map(oneBook => {
-      console.log('1', oneBook)
-    })
+    // console.log('>>>>>' + user)
+    // console.log('a verrrrr los libros ' + booksRead)
+    // booksRead.map(oneBook => {
+    //   console.log('1', oneBook)
+    // })
 
     return (
       <div className="profile-all">
@@ -78,7 +78,7 @@ class Profile extends Component {
                 </Link>
               </div>
               <div className="buttonaligns">
-                <Link to={`/searchfriends`}>
+                <Link to={`/all-users`}>
                   <Button border="black" color="black">
                     Search friends
                   </Button>

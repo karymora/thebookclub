@@ -27,7 +27,7 @@ export default class AllMeetings extends Component {
       .then(response => {
         this.setState({ meetings: response.data.meeting })
         const userInfo = this.state.user
-        console.log('+++++' + userInfo)
+        // console.log('+++++' + userInfo)
         // console.log(this.state.meetings)
       })
       .catch(error => {
@@ -57,13 +57,16 @@ export default class AllMeetings extends Component {
 
   joinMeeting = async meetingId => {
     const userId = { id: this.state.user }
-    console.log('Este es el seeeeeer', userId)
+    // console.log('Este es el seeeeeer', userId)
     const data = await axios.post(
       `http://localhost:3000/meetings/${meetingId}/meetingregister`,
       userId
     )
-    console.log('****' + userId)
-    console.log('dataaaaa' + userId)
+    // console.log('****' + userId)
+    // console.log('dataaaaa' + userId)
+    this.setState(prevState => {
+      return this.props.history.push('/profile', { new: true })
+    })
   }
 
   render() {
@@ -71,11 +74,11 @@ export default class AllMeetings extends Component {
     const { user } = this.state.user
     console.log('>>>>> this is the user' + user)
 
-    console.log(console.log('aquí abajo!!!!! '))
-    console.log('the props' + this.props[0])
-    console.log('the props' + this.props[1])
-    console.log(meetings)
-    console.log('si estoy entrando!')
+    // console.log(console.log('aquí abajo!!!!! '))
+    // console.log('the props' + this.props[0])
+    // console.log('the props' + this.props[1])
+    // console.log(meetings)
+    // console.log('si estoy entrando!')
     return (
       // <MyContext.Consumer>
       <div

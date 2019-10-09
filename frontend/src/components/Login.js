@@ -29,7 +29,7 @@ class Login extends Component {
         this.props.history.push('/profile')
       })
       .catch(error => {
-        console.log(error)
+        // console.log(error)
       })
   }
   // onSubmit = e => {
@@ -49,7 +49,7 @@ class Login extends Component {
   // }
 
   render() {
-    console.log(this.state.user)
+    // console.log(this.state.user)
     return (
       <div
         style={{

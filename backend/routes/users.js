@@ -33,7 +33,7 @@ router.post('/:id/addToBookshelf', async (req, res, next) => {
   const userShelf = await User.findById(req.params.id)
   userShelf.booksRead.push(req.body.id)
   const userModified = await userShelf.save()
-  console.log(req.body.id)
+  // console.log(req.body.id)
   res.status(200).json(userModified)
 })
 

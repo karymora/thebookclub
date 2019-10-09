@@ -226,3 +226,22 @@ hr {
   margin: 40px;
   font-size: 18px;
 }
+
+.assistants-container {
+  position: fixed;
+  margin-top: 500px;
+}
+
+.assistant-element {
+  width: 150px;
+}
+
+.meeting-headline {
+  color: white;
+  align-content: center;
+  font-family: 'Yeseva One', cursive;
+  margin-left: 20%;
+  margin-top: 5%;
+  font-size: 50px;
+  z-index: 1;
+}

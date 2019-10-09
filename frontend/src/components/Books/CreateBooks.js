@@ -49,7 +49,14 @@ export default class CreateBooks extends Component {
           justifyContent: 'center',
           flexDirection: 'column',
           width: '100vw',
-          height: '100vh'
+          height: '100vh',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundImage:
+            'url(' +
+            'https://images.unsplash.com/photo-1447023029226-ef8f6b52e3ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80' +
+            ')'
         }}
       >
         <div className={{ width: '80vw' }}>
@@ -60,7 +67,9 @@ export default class CreateBooks extends Component {
                 display: 'flex',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: 'white',
+                padding: '80px 180px'
               }}
             >
               <div
@@ -73,6 +82,7 @@ export default class CreateBooks extends Component {
                 {/* Title */}
 
                 <div className="form-group">
+                  <div className="header3">Agregar libro</div>
                   <label for="formGroupExampleInput">Title</label>
                   <input
                     style={{
@@ -151,7 +161,7 @@ export default class CreateBooks extends Component {
                 {/* Genre */}
 
                 <div className="form-group">
-                  <label for="formGroupExampleInput"> Genre </label>
+                  <label for="formGroupExampleInput"> Género </label>
                   <input
                     style={{
                       height: '40px',
@@ -162,6 +172,7 @@ export default class CreateBooks extends Component {
                     type="text"
                     className="form-control"
                     onChange={this.handleInput}
+                    placeholder="fantasy, historic, romance, horror, thriller, mystery or dystopia"
                     name="bookGenre"
                     value={book.bookGenre}
                   />
@@ -169,7 +180,7 @@ export default class CreateBooks extends Component {
                 {/* Description */}
 
                 <div className="form-group">
-                  <label for="formGroupExampleInput">Description</label>
+                  <label for="formGroupExampleInput">Descripción</label>
                   <input
                     style={{
                       height: '40px',
@@ -186,7 +197,7 @@ export default class CreateBooks extends Component {
                 </div>
 
                 <Button bg="black" htmlType="submit">
-                  Add Book
+                  Agregar
                 </Button>
               </div>
             </div>

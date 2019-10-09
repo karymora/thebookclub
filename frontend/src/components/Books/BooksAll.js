@@ -24,7 +24,7 @@ export default class BooksAll extends Component {
       .get('http://localhost:3000/books/allbooks')
       .then(response => {
         this.setState({ books: response.data.book })
-        console.log(this.state.books)
+        // console.log(this.state.books)
       })
       .catch(error => {
         console.log(error)
@@ -46,17 +46,18 @@ export default class BooksAll extends Component {
 
   readBook = async book => {
     const userReadId = this.state.user._id
-    console.log('user Id ', userReadId)
-    console.log('this is the book Id ' + book)
-    console.log('Este el user Id ', userReadId)
+    // console.log('user Id ', userReadId)
+    // console.log('this is the book Id ' + book)
+    // console.log('Este el user Id ', userReadId)
 
     const { data } = await axios.post(
       `http://localhost:3000/users/${userReadId}/addToBookshelf`,
       { id: book }
     )
-    console.log('this is data', data)
-
-    return this.props.history.push('/profile', { new: true })
+    // console.log('this is data', data)
+    this.setState(prevState => {
+      return this.props.history.push('/profile', { new: true })
+    })
   }
 
   editBook = id => {
@@ -87,7 +88,7 @@ export default class BooksAll extends Component {
             <div>
               <div className="header2">
                 <Link to={`/addbook`}>
-                  <h2>Próximas reuniones</h2>
+                  <h2>Añade libro</h2>
                 </Link>
               </div>
             </div>
@@ -101,9 +102,14 @@ export default class BooksAll extends Component {
             <Card
               title={book.title}
               key={book._id}
-              style={{ width: '25%' }}
+              style={{ width: '15%' }}
               cover={
-                <img src={book.imageBook} alt={book.title} height="500px" />
+                <img
+                  src={book.imageBook}
+                  alt={book.title}
+                  height="500px"
+                  width="350px"
+                />
               }
               actions={[
                 <Icon
