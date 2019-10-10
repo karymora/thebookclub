@@ -5,7 +5,10 @@ An App for reading lovers. In this app you'll be able to create or search for yo
 search or create a Book Club (meeting) in your area and find friends who are book lovers as well near you. 
 
 
- ![picture alt](https://i.ibb.co/4N4qVvw/Screen-Shot-2019-10-10-at-12-58-56-AM.png)
+![description](https://i.ibb.co/4N4qVvw/Screen-Shot-2019-10-10-at-12-58-56-AM.png)
+
+
+ 
  
  ## Credentials ##
  
