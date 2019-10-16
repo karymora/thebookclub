@@ -7,7 +7,7 @@ search or create a Book Club (meeting) in your area and find friends who are boo
 
 ![description](https://i.ibb.co/4N4qVvw/Screen-Shot-2019-10-10-at-12-58-56-AM.png)
 
-
+[Click here to visit ](https://optimistic-jackson-b43919.netlify.com/) 
  
  
  ## Credentials ##
@@ -20,7 +20,10 @@ search or create a Book Club (meeting) in your area and find friends who are boo
  
  
  ## Technologies ##
- Made with Mongo DB, Express JS, React JS, Node JS.  
+ Made with Mongo DB, Express JS, React JS, Node JS. 
+ 
+   ##Frontend ##
+ CSS, Bootstrap, Styled Components
 
 
 
