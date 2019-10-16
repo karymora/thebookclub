@@ -22,7 +22,7 @@ search or create a Book Club (meeting) in your area and find friends who are boo
  ## Technologies ##
  Made with Mongo DB, Express JS, React JS, Node JS. 
  
-   ##Frontend ##
+ ## Frontend ##
  CSS, Bootstrap, Styled Components
 
 
